@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@spiriit/vite-plugin-svg-spritemap": "^4.0.1",
+    "gh-pages": "^6.3.0",
     "glob": "^8.1.0",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",

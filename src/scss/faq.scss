@@ -1,0 +1,228 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.faq {
+  @include media(to-desktop) {
+    padding-bottom: 94px;
+  }
+
+  @include media(desktop) {
+    padding-bottom: 82px;
+  }
+}
+
+.accordion {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  width: 100%;
+
+  @include media(to-desktop) {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  @include media(desktop) {
+    gap: 28px;
+    margin-top: 40px;
+  }
+}
+
+.accordion-question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 104;
+  font-weight: 600;
+  color: #f4f1f2;
+  background-color: #8f10ba;
+
+  @include media(to-desktop) {
+    font-size: 20px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 8px;
+  }
+
+  @include media(desktop) {
+    font-size: 32px;
+    justify-content: space-between;
+    padding: 4px 20px;
+  }
+}
+
+.arrow-accordion {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+
+  @include media(to-desktop) {
+    width: 22px;
+    height: 25px;
+  }
+
+  @include media(desktop) {
+    width: 53px;
+    height: 53px;
+  }
+}
+
+.accordion-svg-wrapper {
+  z-index: 4;
+
+  @include media(to-desktop) {
+    width: 33px;
+    height: 33px;
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      padding: 1.5px;
+      border-radius: inherit;
+      background: linear-gradient(#fdc016 0%, #ee2dce 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: 2;
+    }
+  }
+
+  @include media(desktop) {
+    width: 53px;
+    height: 53px;
+  }
+}
+
+.accordion-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 300ms ease;
+  padding-bottom: 0px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  transition: max-height 300ms ease, height 300ms ease;
+
+  @include media(to-desktop) {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+  }
+
+  @include media(desktop) {
+    padding-left: 20px;
+    padding-right: 73px;
+    font-size: 24px;
+  }
+}
+
+.accordion-question.active + .accordion-answer {
+  transition: all 300ms ease;
+
+  @include media(to-desktop) {
+    padding-bottom: 8px;
+    height: 194px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @include media(desktop) {
+    height: 140px;
+  }
+}
+
+.accordion-question.active {
+  .arrow-accordion {
+    @include media(desktop) {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.accordion-svg-open {
+  opacity: 0;
+  display: none;
+  transition: all 300ms ease;
+}
+
+.accordion-wrapper {
+  position: relative;
+  z-index: 114;
+  overflow: hidden;
+  background-color: #8f10ba;
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  transition: max-height 300ms ease;
+
+  .accordion-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    transition: all 300ms ease;
+  }
+
+  &::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(to right bottom, #eb6b25 0%, #fed017 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 2;
+  }
+
+  &.open {
+    max-height: 1000px;
+    transition: max-height 300ms ease;
+  }
+
+  @include media(to-desktop) {
+    .accordion-question {
+      .accordion-svg-close {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 800ms ease;
+      }
+
+      &.active {
+        .accordion-svg-close {
+          opacity: 0;
+          position: absolute;
+          visibility: hidden;
+          transition: opacity 800ms ease;
+        }
+      }
+    }
+
+    .accordion-svg-open {
+      opacity: 1;
+      position: relative;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
+      cursor: pointer;
+
+      .arrow-accordion {
+        transform: rotate(180deg) !important;
+      }
+    }
+  }
+}

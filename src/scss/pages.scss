@@ -1,0 +1,166 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.pages-section {
+  width: 100%;
+  color: #edf3f8;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+
+  @include media(to-desktop) {
+    padding-top: 8px;
+    padding-bottom: 20px;
+    background-image: url('/img/bg/bg-pp-mb.png');
+  }
+
+  @include media(desktop) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: url('/img/bg/bg-pp-desk.png');
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    color: #fdc016;
+
+    @include media(to-desktop) {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    @include media(desktop) {
+      font-size: 64px;
+      margin-bottom: 40px;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+
+    @include media(to-desktop) {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    @include media(desktop) {
+      font-size: 40px;
+      margin-top: 32px;
+      margin-bottom: 20px;
+    }
+  }
+
+  pre,
+  a,
+  li,
+  p {
+    font-weight: 400;
+
+    @include media(to-desktop) {
+      font-size: 16px;
+    }
+
+    @include media(desktop) {
+      font-size: 32px;
+    }
+  }
+
+  a {
+    display: inline;
+    word-wrap: break-word;
+  }
+
+  ul {
+    list-style-type: disc;
+
+    @include media(to-desktop) {
+      padding-left: 19px;
+    }
+
+    @include media(desktop) {
+      padding-left: 26px;
+    }
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #ee2dce;
+  }
+
+  .back-btn {
+    font-family: 'Passion One', sans-serif;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    color: #7d18d5;
+    transition: all 0.3s ease;
+
+    @include media(to-desktop) {
+      font-size: 14px;
+      margin-bottom: 31px;
+      gap: 9px;
+      height: 36px;
+    }
+
+    @include media(desktop) {
+      gap: 14px;
+      font-size: 18px;
+      height: 54px;
+      margin-bottom: 6px;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  .back {
+    @include media(to-desktop) {
+      width: 17px;
+      height: 19px;
+    }
+
+    @include media(desktop) {
+      width: 29px;
+      height: 26px;
+    }
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .date {
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    @include media(to-desktop) {
+      font-size: 18px;
+    }
+
+    @include media(desktop) {
+      font-size: 40px;
+    }
+  }
+}
+
+.pages-container {
+  margin: 0 auto;
+
+  @include media(to-desktop) {
+    width: 373px;
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  @include media(desktop) {
+    width: 1442px;
+    padding-right: 41px;
+    padding-left: 41px;
+  }
+}

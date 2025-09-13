@@ -1,0 +1,196 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.download {
+  @include media(desktop) {
+    padding-bottom: 20px;
+  }
+}
+
+.download-title {
+  text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+  color: #ec4633;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 16px;
+
+  @include media(to-desktop) {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  @include media(desktop) {
+    font-size: 48px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+}
+
+.download-text {
+  text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+  text-align: center;
+  font-weight: 500;
+  color: #edf3f8;
+
+  @include media(to-desktop) {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+}
+
+.download-btn-wrapper {
+  display: flex;
+  align-items: center;
+
+  @include media(to-desktop) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @include media(desktop) {
+    gap: 36px;
+    justify-content: center;
+  }
+}
+
+.download-apple,
+.download-play,
+.download-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: justify;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  @include media(to-desktop) {
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 14px;
+
+    &::before {
+      padding: 4px;
+    }
+  }
+
+  @include media(desktop) {
+    width: 254px;
+    height: 80px;
+    font-size: 20px;
+    border-radius: 30px;
+
+    &::before {
+      padding: 7px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    color: #fff;
+  }
+}
+
+.download-play {
+  background-color: #fab413;
+  color: #7d18d5;
+
+  &::before {
+    background: linear-gradient(#ffd417 0%, #ea6625 100%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #fdc424;
+  }
+}
+
+.download-apple {
+  background-color: #7529d9;
+  color: #edf3f8;
+
+  @include media(to-desktop) {
+    gap: 4px;
+  }
+
+  @include media(desktop) {
+    gap: 8px;
+  }
+
+  &::before {
+    background: linear-gradient(#b75be4 0%, #6524c3 100%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #b75be4;
+  }
+}
+
+.download-google {
+  background-color: #a229d9;
+  color: #fab413;
+
+  @include media(to-desktop) {
+    gap: 5px;
+  }
+
+  @include media(desktop) {
+    gap: 8px;
+  }
+
+  &::before {
+    background: linear-gradient(#8c0fb8 0%, #3f0679 100%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #8c0fb8;
+  }
+}
+
+.download-img-apple {
+  @include media(to-desktop) {
+    width: 17px;
+    height: 17px;
+  }
+
+  @include media(desktop) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.download-img-google {
+  @include media(to-desktop) {
+    width: 13px;
+    height: 14px;
+  }
+
+  @include media(desktop) {
+    width: 26px;
+    height: 29px;
+  }
+}

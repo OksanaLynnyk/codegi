@@ -1,0 +1,150 @@
+@use './mixins' as *;
+@use './breakpoints' as bp;
+
+body {
+  margin: 0;
+}
+
+body.preload {
+  position: relative;
+}
+
+body.preload::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+body.loaded::before {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bg {
+  background-repeat: no-repeat;
+
+  @include media(to-desktop) {
+    background-image: url('/img/bg/puzzle-1-mb.png'),
+      url('/img/bg/puzzle-2-mb.png'), url('/img/bg/star-bg.png'),
+      url('/img/bg/star-bg.png'), url('/img/bg/star-bg.png'),
+      url('/img/bg/bg-mb.png');
+    background-position: center 840px, center 2698px, center 4150px,
+      center 5120px, center bottom 1290px, center top;
+    background-size: auto 1030px, auto 652px, auto 70px, auto 70px, auto 70px,
+      cover;
+  }
+
+  @include media(desktop) {
+    background-image: url('/img/bg/puzzle-1-desk.png'),
+      url('/img/bg/puzzle-2-desk.png'), url('/img/bg/star-bg.png'),
+      url('/img/bg/star-bg.png'), url('/img/bg/faq-bg.png'),
+      url('/img/bg/bg-1-desk.png'), url('/img/bg/bg-2-desk.png'),
+      url('/img/bg/bg-3-desk.png'), url('/img/bg/bg-4-desk.png'),
+      url('/img/bg/bg-5-desk.png');
+
+    background-position: center 1620px, center 4650px, center 6712px,
+      center 8220px, center bottom 1500px, center top, center 2300px,
+      center 4600px, center 6900px, center bottom;
+
+    background-size: auto, auto, auto 142px, auto 142px, 100% 509px, 100% 2300px,
+      100% 2300px, 100% 2300px, 100% 2690px, 100% 2690px;
+  }
+}
+
+.section {
+  @include media(to-desktop) {
+    padding-top: 24px;
+  }
+
+  @include media(desktop) {
+    padding-top: 40px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+
+  @include media(to-desktop) {
+    max-width: 373px;
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  @include media(desktop) {
+    max-width: 1442px;
+    padding-left: 41px;
+    padding-right: 41px;
+  }
+
+  h1 {
+    color: #fdc016;
+    font-weight: 700;
+
+    @include media(to-desktop) {
+      font-size: 24px;
+    }
+
+    @include media(desktop) {
+      font-size: 64px;
+      margin-bottom: 40px;
+    }
+  }
+
+  h2 {
+    text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+    color: #fdc016;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 4px;
+    width: fit-content;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, #a229d9 0%, #eb6b24 87%);
+    }
+
+    @include media(to-desktop) {
+      font-size: 20px;
+    }
+
+    @include media(desktop) {
+      font-size: 48px;
+    }
+  }
+}
+
+pre {
+  font-family: inherit;
+  white-space: pre-line;
+  margin: 0;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  font-size: 40px;
+}

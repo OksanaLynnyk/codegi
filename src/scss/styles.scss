@@ -1,0 +1,28 @@
+@use './common/global.scss';
+@use './header.scss';
+@use './hero.scss';
+@use './rules.scss';
+@use './features.scss';
+@use './how-it-works.scss';
+@use './gallery.scss';
+@use './challenges.scss';
+@use './levels.scss';
+@use './tools.scss';
+@use './test.scss';
+@use './faq.scss';
+@use './blog.scss';
+@use './download.scss';
+@use './contact.scss';
+@use './footer.scss';
+@use './cookie-popup.scss';
+@use './pages.scss';
+
+:root {
+  font-family: 'Kode Mono', monospace;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}

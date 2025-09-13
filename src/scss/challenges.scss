@@ -1,0 +1,96 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.challenges {
+  @include media(desktop) {
+    padding-bottom: 120px;
+  }
+}
+
+.challenges-text {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(253, 196, 36, 0.8);
+
+  @include media(to-desktop) {
+    margin-top: 18px;
+    margin-bottom: 34px;
+    font-size: 18px;
+  }
+
+  @include media(desktop) {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-size: 36px;
+    width: 785px;
+  }
+}
+
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.challenges-item {
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:first-of-type {
+    background-image: url('/img/challenges/item-bg-first.png');
+    color: #fdc424;
+
+    @include media(to-desktop) {
+      padding: 35px 32px 70px;
+    }
+
+    @include media(desktop) {
+      padding: 55px 50px;
+    }
+  }
+
+  &:nth-of-type(2) {
+    background-image: url('/img/challenges/item-bg-second.png');
+    color: #ee2dce;
+
+    @include media(to-desktop) {
+      padding: 42px 32px 63px;
+    }
+
+    @include media(desktop) {
+      padding: 65px 50px;
+    }
+  }
+
+  &:nth-of-type(3) {
+    background-image: url('/img/challenges/item-bg-third.png');
+    color: #2c0469;
+
+    @include media(to-desktop) {
+      padding: 42px 32px 63px;
+    }
+
+    @include media(desktop) {
+      padding: 65px 50px;
+    }
+  }
+
+  @include media(to-desktop) {
+    width: 329px;
+    height: 151px;
+    font-size: 18px;
+  }
+
+  @include media(desktop) {
+    width: 504px;
+    height: 232px;
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,189 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.overlay {
+  @include media(to-desktop) {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.show-overlay {
+  display: block;
+}
+
+.cookie-popup {
+  display: none;
+  position: fixed;
+  border-radius: 18px;
+  z-index: 999;
+  background-color: #23025d;
+
+  @include media(to-desktop) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 373;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    bottom: 261px;
+  }
+
+  @include media(desktop) {
+    width: 960px;
+    bottom: 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    right: calc((100vw - 1446px) / 2);
+  }
+}
+
+.cookie-content {
+  @include media(to-desktop) {
+    width: 373px;
+    padding-left: 18px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+
+  @include media(desktop) {
+    padding-left: 47px;
+    padding-right: 47px;
+    width: 960px;
+  }
+}
+
+.show-popup {
+  @include media(to-desktop) {
+    display: block;
+  }
+
+  @include media(desktop) {
+    display: flex;
+  }
+}
+
+.cookies-btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media(to-desktop) {
+    gap: 21px;
+    margin-top: 8px;
+  }
+
+  @include media(desktop) {
+    gap: 30px;
+    margin-top: 16px;
+  }
+}
+
+.cookie-btn {
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media(to-desktop) {
+    border-radius: 13px;
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  @include media(desktop) {
+    border-radius: 18px;
+    width: 200px;
+    height: 54px;
+  }
+
+  &.accept-btn {
+    background-color: #fdc016;
+    border: none;
+    color: #23025d;
+    font-weight: 700;
+
+    @include media(to-desktop) {
+      font-family: 'Passion One', sans-serif;
+      border: 1.41px solid #fdc016;
+      box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    @include media(desktop) {
+      border: 2px solid #fdc016;
+      box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.25);
+      font-size: 20px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #f9d04c;
+      color: #23025d;
+    }
+  }
+
+  &.decline-btn {
+    font-family: 'Passion One', sans-serif;
+    font-weight: 400;
+    border: 1px solid #1f5daa;
+    background: rgba(255, 255, 255, 0);
+    color: #fdc016;
+
+    @include media(to-desktop) {
+      border: 1.41px solid #fdc016;
+      box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    @include media(desktop) {
+      border: 2px solid #fdc016;
+      box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.25);
+      font-size: 24px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #f8b807;
+      color: #23025d;
+    }
+  }
+}
+
+.cookie-title {
+  font-weight: 700;
+  text-align: center;
+  color: #edf3f8;
+
+  @include media(to-desktop) {
+    font-size: 20px;
+    line-height: 200%;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+    line-height: 100%;
+  }
+}
+
+.cookies-text {
+  font-weight: 400;
+  line-height: 200%;
+  text-align: center;
+  color: #c9d8e3;
+
+  @include media(to-desktop) {
+    font-size: 16px;
+    margin-top: 4px;
+  }
+
+  @include media(desktop) {
+    font-size: 24px;
+    margin-top: 16px;
+  }
+}

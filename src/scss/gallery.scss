@@ -1,0 +1,62 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.gallery-container {
+  @include media(to-desktop) {
+    padding-right: 0;
+  }
+}
+
+.gallery-list {
+  @include media(to-desktop) {
+    margin-top: 24px;
+  }
+
+  @include media(desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-top: 39px;
+  }
+}
+
+.gallery-item {
+  @include media(to-desktop) {
+    height: 221px !important;
+  }
+
+  @include media(desktop) {
+    height: 399px !important;
+  }
+}
+
+.gallery-item-small {
+  @include media(to-desktop) {
+    width: 243px !important;
+  }
+
+  @include media(desktop) {
+    width: 440px !important;
+  }
+}
+
+.gallery-item-small-2 {
+  @include media(to-desktop) {
+    width: 242px !important;
+  }
+
+  @include media(desktop) {
+    width: 440px !important;
+  }
+}
+
+.gallery-item-large {
+  @include media(to-desktop) {
+    width: 327px !important;
+  }
+
+  @include media(desktop) {
+    width: 670px !important;
+  }
+}

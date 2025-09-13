@@ -1,0 +1,173 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.contact {
+  @include media(to-desktop) {
+    padding-bottom: 24px;
+  }
+
+  @include media(desktop) {
+    padding-bottom: 37px;
+  }
+}
+
+.contact-title {
+  text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+  color: #ec4633;
+  font-weight: 600;
+  text-align: center;
+
+  @include media(to-desktop) {
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    font-size: 48px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.contact-text {
+  text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+  text-align: center;
+  color: #edf3f8;
+
+  @include media(to-desktop) {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include media(to-desktop) {
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 20px;
+  }
+}
+
+.contact-email-text {
+  font-weight: 700;
+  color: #edf3f8;
+  text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+
+  @include media(to-desktop) {
+    font-size: 18px;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+  }
+}
+
+.contact-email-link {
+  font-weight: 600;
+  color: #fdc016;
+  transition: color 300ms ease;
+
+  @include media(to-desktop) {
+    font-size: 18px;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+  }
+
+  &:hover,
+  &:focus {
+    color: #ec4633;
+  }
+}
+
+.contact-list-wrapper {
+  @include media(desktop) {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.contact-list-title {
+  text-shadow: 0 6px 4px rgba(13, 13, 13, 0.25);
+  font-weight: 500;
+  color: #edf3f8;
+
+  @include media(to-desktop) {
+    font-size: 18px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  @include media(desktop) {
+    font-size: 40px;
+  }
+}
+
+.contact-list {
+  display: flex;
+  align-items: center;
+
+  @include media(to-desktop) {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  @include media(desktop) {
+    gap: 20px;
+  }
+}
+
+.contact-item {
+  &:first-of-type {
+    .contact-link {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &:nth-of-type(2) {
+    .contact-link {
+      width: 40px;
+      height: 28px;
+    }
+  }
+
+  &:nth-of-type(3) {
+    .contact-link {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &:nth-of-type(4) {
+    .contact-link {
+      width: 46px;
+      height: 46px;
+    }
+  }
+}
+
+.contact-link {
+  transition: all 300ms ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}

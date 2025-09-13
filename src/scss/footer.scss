@@ -1,0 +1,96 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.footer {
+  background-image: url('/img/footer/footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include media(to-desktop) {
+    padding-top: 11px;
+    padding-bottom: 8px;
+  }
+
+  @include media(desktop) {
+    padding-top: 26px;
+    padding-bottom: 20px;
+  }
+}
+
+.footer-container {
+  display: flex;
+
+  @include media(to-desktop) {
+    padding-left: 12px;
+    padding-right: 32px;
+
+    gap: 32px;
+  }
+
+  @include media(desktop) {
+    justify-content: center;
+    padding-left: 156px;
+    padding-right: 155px;
+    gap: 39px;
+  }
+}
+
+.footer-list {
+  display: flex;
+  text-align: center;
+  gap: 12px;
+
+  @include media(to-desktop) {
+    flex-wrap: wrap;
+  }
+
+  @include media(desktop) {
+    margin-top: 54px;
+  }
+}
+
+.footer-text {
+  text-shadow: 0 6px 4px 0 rgba(13, 13, 13, 0.25);
+  color: #edf3f8;
+  font-weight: 500;
+
+  @include media(to-desktop) {
+    font-size: 10px;
+    margin-top: 16px;
+  }
+
+  @include media(desktop) {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 41px;
+  }
+}
+
+.footer-link {
+  font-size: 12px;
+  text-shadow: 0 6px 4px 0 rgba(13, 13, 13, 0.25);
+  color: #edf3f8;
+  font-weight: 700;
+  transition: color 300ms ease;
+
+  @include media(to-desktop) {
+    text-align: justify;
+    font-size: 12px;
+  }
+
+  @include media(desktop) {
+    font-size: 32px;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fab413;
+  }
+}
+
+.footer-span {
+  @include media(desktop) {
+    margin-right: 14px;
+  }
+}

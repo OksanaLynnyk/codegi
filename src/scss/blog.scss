@@ -1,0 +1,124 @@
+@use './common/mixins' as *;
+@use './common/breakpoints' as bp;
+
+.blog-container {
+  @include media(to-desktop) {
+    padding-right: 0;
+  }
+
+  @include media(desktop) {
+    padding-left: 19px;
+    padding-right: 19px;
+
+    h2 {
+      padding-left: 21px;
+    }
+  }
+}
+
+.swiper-blog {
+  @include media(to-desktop) {
+    margin-top: 16px;
+  }
+
+  @include media(desktop) {
+    margin-top: 40px;
+  }
+}
+
+.blog-img {
+  width: 300px;
+  height: 200px;
+}
+
+.blog-text {
+  font-weight: 700;
+  color: #fff;
+  border-radius: 30px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  position: relative;
+  z-index: 4;
+  width: 268px;
+  transition: color 300ms ease;
+
+  &:hover,
+  &:focus {
+    color: #fab413;
+  }
+
+  @include media(to-desktop) {
+    align-items: center;
+    font-size: 18px;
+    line-height: 178%;
+    height: 128px;
+    margin-top: 16px;
+  }
+
+  @include media(desktop) {
+    padding-top: 16px;
+    font-size: 24px;
+    line-height: 133%;
+    height: 170px;
+    margin-top: 20px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    border-radius: inherit;
+    background: linear-gradient(#ee2dce 0%, #eb6b25 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 2;
+  }
+}
+
+.blog-item {
+  border-radius: 30px;
+  position: relative;
+  z-index: 4;
+
+  @include media(to-desktop) {
+    width: 300px !important;
+    height: 344px !important;
+    padding: 16px 13px 16px 14px;
+  }
+
+  @include media(desktop) {
+    width: 300px !important;
+    height: 406px !important;
+    padding: 24px 20px 20px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    border-radius: inherit;
+    background: linear-gradient(#ee2dce 0%, #eb6b25 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 2;
+  }
+}
+
+.swiper-button-blog {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.blog-list {
+  @include media(desktop) {
+    gap: 14px;
+  }
+}

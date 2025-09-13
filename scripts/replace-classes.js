@@ -28,12 +28,14 @@ function processFile(filePath) {
 
   if (ext === '.html') {
     content = processHTML(content);
+  } else if (ext === '.css') {
     content = processCSS(content);
   } else if (ext === '.js') {
     content = processJS(content);
   }
 
   fs.writeFileSync(filePath, content);
+  console.log(`✅ Updated: ${filePath}`);
 }
 
 const excluded = ['swiper', 'swiper-wrapper', 'swiper-slide', 'btn-next', 'btn-prev', 'swiper-my', 'swiper-button-prev-desktop',
